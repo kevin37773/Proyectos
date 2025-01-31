@@ -1,0 +1,69 @@
+[System]
+Name='demo12_Final'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='error'
+Range=[-70 70]
+NumMFs=5
+MF1='ENG':'trimf',[-70 -46.66 -23.34]
+MF2='ENP':'trimf',[-46.66 -23.34 0]
+MF3='EZ':'trimf',[-23.34 0 23.34]
+MF4='EPP':'trimf',[0 23.34 46.66]
+MF5='EPG':'trimf',[23.34 46.66 70]
+
+[Input2]
+Name='der_error'
+Range=[-0.5 0.5]
+NumMFs=5
+MF1='de_NG':'trimf',[-0.5 -0.375 -0.1875]
+MF2='de_NP':'trimf',[-0.375 -0.1875 0]
+MF3='de_NZ':'trimf',[-0.1875 0 0.1875]
+MF4='de_PP':'trimf',[0 0.1875 0.375]
+MF5='de_PG':'trimf',[0.1875 0.375 0.5]
+
+[Output1]
+Name='pwm'
+Range=[-2.5 2.5]
+NumMFs=5
+MF1='VNG':'trimf',[-2.5 -1.5 -0.75]
+MF2='VNP':'trimf',[-1.5 -0.75 0]
+MF3='VC':'trimf',[-0.75 0 0.75]
+MF4='VPP':'trimf',[0 0.75 1.5]
+MF5='VPG':'trimf',[0.75 1.5 2.5]
+
+[Rules]
+1 1, 1 (1) : 1
+2 1, 1 (1) : 1
+3 1, 1 (1) : 1
+4 1, 2 (1) : 1
+5 1, 3 (1) : 1
+1 2, 1 (1) : 1
+2 2, 2 (1) : 1
+3 2, 2 (1) : 1
+4 2, 3 (1) : 1
+5 2, 4 (1) : 1
+1 3, 1 (1) : 1
+2 3, 2 (1) : 1
+3 3, 3 (1) : 1
+4 3, 4 (1) : 1
+5 3, 5 (1) : 1
+1 4, 2 (1) : 1
+2 4, 3 (1) : 1
+3 4, 4 (1) : 1
+4 4, 4 (1) : 1
+5 4, 5 (1) : 1
+1 5, 3 (1) : 1
+2 5, 4 (1) : 1
+3 5, 5 (1) : 1
+4 5, 5 (1) : 1
+5 5, 5 (1) : 1
